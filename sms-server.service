@@ -1,0 +1,12 @@
+[Unit]
+Description=SMS Server
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+User=eji
+ExecStart=/usr/bin/python /home/eji/sms-server/main.py
+
+[Install]
+WantedBy=multi-user.target
