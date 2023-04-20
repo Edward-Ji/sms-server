@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 import timeago
-from bottle import get, post, request, run, template
+from bottle import get, post, redirect, request, run, template
 
 SMS_LEN_CAP = 50
 SMS_PATH = os.path.join(os.path.dirname(__file__), "sms.json")
@@ -72,9 +72,11 @@ def post_index():
         sms = sms[:SMS_LEN_CAP]
     dump_sms(sms)
 
+    return redirect("/")
+
 if __name__ == "__main__":
     with open(SETTINGS_PATH, encoding="utf-8") as f:
         settings = json.load(f)
         assert "port" in settings and isinstance(settings["port"], int)
         assert "number" in settings
-    run(host="0.0.0.0", port=settings["port"], server="tornado")
+    run(host="0.0.0.0", port=settings["port"], server="waitress")
