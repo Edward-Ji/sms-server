@@ -5,8 +5,8 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-User=eji
-ExecStart=/usr/bin/python /home/eji/sms-server/main.py
+User=<user>
+ExecStart=/usr/bin/python <path>/main.py
 
 [Install]
 WantedBy=multi-user.target

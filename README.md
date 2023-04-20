@@ -22,16 +22,20 @@ See [How to use] for more information on the application.
 
 ### Raspberry Pi
 
-Install Python requirements with `python -m pip install -r requirements.txt`.
+Clone and `cd` into the repository. Install Python requirements with `python -m
+pip install -r requirements.txt`.
 
 Configure settings in `setttings.json`:
 - `port`: the port you decided the server should bind to
 - `number`: the mobile number of the Android device, this will be shown on the
   webpage
 
-On the Linux device, clone this repository and run `./install`. Make sure you
-run it as `root`. The script will add the SMS server to `systemd`, enable and
-start the server.
+Inside `sms-server.service`, replace:
+- `<user>` by your username (use `whoami`); and
+- `<path>` by the path to the local repository (use `pwd`).
+
+Run `./install` as `root` (e.g. `sudo ./install`). The script will add the SMS
+server to `systemd`, enable and start the server.
 
 ## Usage
 
