@@ -77,4 +77,4 @@ if __name__ == "__main__":
         settings = json.load(f)
         assert "port" in settings and isinstance(settings["port"], int)
         assert "number" in settings
-    run(host="0.0.0.0", port=settings["port"])
+    run(host="0.0.0.0", port=settings["port"], server="tornado")
