@@ -32,11 +32,11 @@ def get_index():
     return template("""<head>
         <title>SMS Server</title>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1">
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     </head>
     <body style="height: 0%">
         <h1>SMS Server</h1>
+        <button onClick="window.location.reload()">Refresh</button>
         <p class="notice">Number: {{ number }}</p>
         %if sms:
             <table>
