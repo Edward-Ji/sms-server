@@ -30,6 +30,9 @@ def readable_datetime(epoch):
 @get("/")
 def get_index():
     return template("""<head>
+        <title>SMS Server</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="1">
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     </head>
     <body style="height: 0%">
