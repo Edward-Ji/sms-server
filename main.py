@@ -37,7 +37,11 @@ def get_index():
     <body style="height: 0%">
         <h1>SMS Server</h1>
         <button onClick="window.location.reload()">Refresh</button>
-        <p class="notice">Number: {{ number }}</p>
+        <p class="notice">Number:
+            <span style="user-select: all; cursor: pointer">
+                {{ number }}
+            </span>
+        </p>
         %if sms:
             <table>
                 <tr>
