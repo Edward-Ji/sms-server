@@ -7,7 +7,21 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-cp "${path}/sms-server.service" /etc/systemd/system
+cat > /etc/systemd/system/sms-server.service << EOF
+[Unit]
+Description=SMS Server
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+User=$(whoami)
+ExecStart=/usr/bin/python $(pwd)/${path}/main.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 systemctl daemon-reload
 systemctl enable sms-server.service
 systemctl start sms-server.service

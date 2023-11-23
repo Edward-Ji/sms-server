@@ -30,10 +30,6 @@ Configure settings in `setttings.json`:
 - `number`: the mobile number of the Android device, this will be shown on the
   webpage
 
-Inside `sms-server.service`, replace:
-- `<user>` by your username (use `whoami`); and
-- `<path>` by the path to the local repository (use `pwd`).
-
 Run `./install` as `root` (e.g. `sudo ./install`). The script will add the SMS
 server to `systemd`, enable and start the server.
 
