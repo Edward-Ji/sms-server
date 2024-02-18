@@ -16,7 +16,7 @@ After=multi-user.target
 Type=simple
 Restart=always
 User=$(whoami)
-ExecStart=/usr/bin/python $(pwd)/${path}/main.py
+ExecStart=/usr/bin/python ${path}/main.py
 
 [Install]
 WantedBy=multi-user.target
