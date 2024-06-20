@@ -15,7 +15,7 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-User=$(whoami)
+User=$1
 ExecStart=/usr/bin/python ${path}/main.py
 
 [Install]

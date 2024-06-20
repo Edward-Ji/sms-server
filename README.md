@@ -30,8 +30,8 @@ Configure settings in `setttings.json`:
 - `number`: the mobile number of the Android device, this will be shown on the
   webpage
 
-Run `./install` as `root` (e.g. `sudo ./install`). The script will add the SMS
-server to `systemd`, enable and start the server.
+Run `sudo ./install $(whoami)`, the script will add the SMS server to `systemd`,
+enable and start the server.
 
 ## Usage
 
